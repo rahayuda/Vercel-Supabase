@@ -6,18 +6,38 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
-    <a href="/insert">Insert</a><hr>
-    <table>
-        {% for row in results %}
-        <tr>
-            <td>{{ row['nim'] }}</td>
-            <td>{{ row['nama'] }}</td>
-            <td>
-                <a href="/update?id={{ row['id'] }}">Edit</a>
-                <a href="/delete?id={{ row['id'] }}">Delete</a>
-            </td>
-        </tr>
-        {% endfor %}
-    </table>
+    <header>
+        <div class="container">
+            <div id="branding">
+                <h1>Daftar Mahasiswa</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/insert">Insert</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div class="container">
+        <a href="/insert">Insert</a><hr>
+        <table>
+            <tr>
+                <th>NIM</th>
+                <th>Nama</th>
+                <th>Actions</th>
+            </tr>
+            {% for row in results %}
+            <tr>
+                <td>{{ row['nim'] }}</td>
+                <td>{{ row['nama'] }}</td>
+                <td>
+                    <a href="/update?id={{ row['id'] }}">Edit</a>
+                    <a href="/delete?id={{ row['id'] }}">Delete</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
 </body>
 </html>
