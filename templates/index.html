@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mahasiswa</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <a href="/insert">Insert</a><hr>
+    <table>
+        {% for row in results %}
+        <tr>
+            <td>{{ row['nim'] }}</td>
+            <td>{{ row['nama'] }}</td>
+            <td>
+                <a href="/update?id={{ row['id'] }}">Edit</a>
+                <a href="/delete?id={{ row['id'] }}">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

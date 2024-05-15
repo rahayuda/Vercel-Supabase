@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Update Mahasiswa</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Update Mahasiswa</h1>
+    <form method="post">
+        <label for="nim">NIM:</label><br>
+        <input type="text" id="nim" name="nim" value="{{ result['nim'] }}"><br>
+        <label for="nama">Nama:</label><br>
+        <input type="text" id="nama" name="nama" value="{{ result['nama'] }}"><br>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
